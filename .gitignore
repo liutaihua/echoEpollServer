@@ -26,3 +26,8 @@
 *.exe
 *.out
 *.app
+
+epollServer
+epollServer.pro
+epollServer.pro.user
+epollServer.xcodeproj/
