@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include "ServerClientSocket.h"
+#include "Py/ScriptManager.h"
 
 
 SClientSocket::SClientSocket(SOCKET fd,const sockaddr_in * peer) :
@@ -31,6 +32,9 @@ void SClientSocket::OnRecvData()
     std::string str = temp;
     std::cout<<"on recv data: "<<str<<"\n";
     Write(&temp, sizeof(temp));
+    // 测试在PY里调用SClientSocket->Disconnect() 去掉注释将会直接被断开这个连接
+    //ScriptManager::Instance()->CallNoRT("eplObserver.print_recv_data", dynamic_cast<TcpSocket*>(this));
+
 }
 
 void SClientSocket::OnDisconnect()
