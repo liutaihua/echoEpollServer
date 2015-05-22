@@ -15,7 +15,7 @@ GameLogicScriptManager::GameLogicScriptManager()
 
 //    // 添加脚本目录
     CallPythonCommand("sys.path.append(os.path.join(os.path.abspath('.'), 'Py'))");
-//    // 导入模块
+//    // 导入Py模块
     CallPythonCommand("import ttt");
     CallPythonCommand("import eplObserver");
 
